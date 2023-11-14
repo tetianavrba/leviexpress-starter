@@ -5,6 +5,7 @@ import './style.css';
 export const ReservationPage = () => {
   const { id } = useParams();
   const [reservation, setReservation] = useState(null);
+
   useEffect(() => {
     const fetchReservation = async () => {
       const resp = await fetch(
@@ -20,6 +21,7 @@ export const ReservationPage = () => {
 
     fetchReservation();
   }, []);
+
   return (
     <div className="reservation container">
       <h2>Vaše e-jízdenka č. {id}</h2>
